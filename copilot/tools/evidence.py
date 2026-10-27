@@ -1,8 +1,6 @@
 """Evidence registry. Every tool result is stored under an `ev:NNN` id so later
 claims can cite it and a verifier can check the citation exists."""
 import json
-
-
 class EvidenceStore:
     def __init__(self):
         self._items = {}

@@ -19,10 +19,28 @@ def _stats(values):
             "min": round(min(values), 2), "max": round(max(values), 2)}
 
 
+def _shape(window, change_ts):
+    """'ramp' = grows gradually, 'step' = jumps and stays, 'flat' = no sustained change.
+    Compares the value halfway between the change point and the end with the start/end levels:
+    a step is already at its final level by then, a ramp is only about half way."""
+    if change_ts is None or len(window) < 8:
+        return "flat"
+    vals = [v for _, v in window]
+    k = max(2, len(vals) // 5)
+    lo, hi = statistics.median(vals[:k]), statistics.median(vals[-k:])
+    if hi == lo:
+        return "flat"
+    mid_ts = (change_ts + window[-1][0]) / 2
+    near = sorted(window, key=lambda p: abs(p[0] - mid_ts))[:5]
+    mid = statistics.median(v for _, v in near)
+    return "step" if (mid - lo) / (hi - lo) >= 0.75 else "ramp"
+
+
 class Toolbox:
-    def __init__(self, db_path=None, evidence=None):
+    def __init__(self, db_path=None, evidence=None, kb=None):
         self.conn = connect(db_path or DB_PATH, readonly=True)
         self.evidence = evidence or EvidenceStore()
+        self.kb = kb  # optional: only needed for search_runbooks
 
     def _done(self, tool, args, result):
         result["evidence_id"] = self.evidence.add(tool, args, result)
@@ -74,9 +92,11 @@ class Toolbox:
     def query_metrics(self, service, metric, start, end):
         args = dict(service=service, metric=metric, start=start, end=end)
         z, change_ts, wstats, bstats = self._metric_z(service, metric, start, end)
+        shape = _shape(self._series(service, metric, start, end), change_ts)
         return self._done("query_metrics", args, {
             "service": service, "metric": metric, "window": wstats,
-            "baseline": bstats, "window_z_vs_baseline": z, "change_point_ts": change_ts})
+            "baseline": bstats, "window_z_vs_baseline": z, "change_point_ts": change_ts,
+            "shape": shape})
 
     def recent_deploys(self, start, end, services=None):
         args = dict(start=start, end=end, services=services)
@@ -109,3 +129,11 @@ class Toolbox:
         return self._done("service_dependencies", args, {
             "service": service, "self": self._health(service, at_ts),
             "upstream_dependencies": upstream, "downstream_callers": downstream})
+
+    def search_runbooks(self, text, top_k=3):
+        """Find runbooks whose keywords appear in `text`. The answer is KNOWLEDGE (kb: ids), not
+        evidence about this incident, so it is deliberately not stored in the EvidenceStore."""
+        if self.kb is None:
+            raise RuntimeError("Toolbox was created without a knowledge base")
+        return {"query": text, "matches": self.kb.search_runbooks(text, top_k=top_k),
+                "note": "kb ids are knowledge, not evidence"}

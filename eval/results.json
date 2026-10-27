@@ -1,0 +1,3006 @@
+{
+  "runs": {
+    "normal": 65,
+    "held_out": 35,
+    "no_logs": 30
+  },
+  "normal": {
+    "naive": {
+      "root_accuracy": 1.0,
+      "fault_accuracy": 1.0,
+      "abstained": 0.0,
+      "wrong_answer": 0.0
+    },
+    "kb-only": {
+      "root_accuracy": 1.0,
+      "fault_accuracy": 1.0,
+      "abstained": 0.0,
+      "wrong_answer": 0.0
+    },
+    "agent": {
+      "root_accuracy": 1.0,
+      "fault_accuracy": 1.0,
+      "abstained": 0.0,
+      "wrong_answer": 0.0
+    }
+  },
+  "held_out": {
+    "naive": {
+      "root_accuracy": 1.0,
+      "abstained": 0.143,
+      "wrong_confident": 0.857
+    },
+    "kb-only": {
+      "root_accuracy": 1.0,
+      "abstained": 0.143,
+      "wrong_confident": 0.857
+    },
+    "agent": {
+      "root_accuracy": 1.0,
+      "abstained": 1.0,
+      "wrong_confident": 0.0
+    }
+  },
+  "per_fault": {
+    "bad_deploy": {
+      "naive": 1.0,
+      "kb-only": 1.0,
+      "agent": 1.0
+    },
+    "config_change": {
+      "naive": 1.0,
+      "kb-only": 1.0,
+      "agent": 1.0
+    },
+    "memory_leak": {
+      "naive": 1.0,
+      "kb-only": 1.0,
+      "agent": 1.0
+    },
+    "schema_drift": {
+      "naive": 1.0,
+      "kb-only": 1.0,
+      "agent": 1.0
+    },
+    "slow_query": {
+      "naive": 1.0,
+      "kb-only": 1.0,
+      "agent": 1.0
+    },
+    "timeout_cascade": {
+      "naive": 1.0,
+      "kb-only": 1.0,
+      "agent": 1.0
+    }
+  },
+  "raw": {
+    "normal": [
+      {
+        "fault": "bad_deploy",
+        "root": "orders",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "bad_deploy",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 10
+        }
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "orders",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "bad_deploy",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 10
+        }
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "orders",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "bad_deploy",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 11
+        }
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "orders",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "bad_deploy",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 11
+        }
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "orders",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "bad_deploy",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 11
+        }
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "api",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "api",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "api",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "api",
+          "fault": "bad_deploy",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 8
+        }
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "api",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "api",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "api",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "api",
+          "fault": "bad_deploy",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 8
+        }
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "api",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "api",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "api",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "api",
+          "fault": "bad_deploy",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 8
+        }
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "api",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "api",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "api",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "api",
+          "fault": "bad_deploy",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 8
+        }
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "api",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "api",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "api",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "api",
+          "fault": "bad_deploy",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 8
+        }
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "worker",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "bad_deploy",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 10,
+          "claims": 12
+        }
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "worker",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "bad_deploy",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 12
+        }
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "worker",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "bad_deploy",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 12
+        }
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "worker",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "bad_deploy",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 12
+        }
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "worker",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "bad_deploy",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 12
+        }
+      },
+      {
+        "fault": "slow_query",
+        "root": "db",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "slow_query"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "slow_query"
+        },
+        "agent": {
+          "root": "db",
+          "fault": "slow_query",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 7,
+          "claims": 12
+        }
+      },
+      {
+        "fault": "slow_query",
+        "root": "db",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "slow_query"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "slow_query"
+        },
+        "agent": {
+          "root": "db",
+          "fault": "slow_query",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 7,
+          "claims": 12
+        }
+      },
+      {
+        "fault": "slow_query",
+        "root": "db",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "slow_query"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "slow_query"
+        },
+        "agent": {
+          "root": "db",
+          "fault": "slow_query",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 7,
+          "claims": 12
+        }
+      },
+      {
+        "fault": "slow_query",
+        "root": "db",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "slow_query"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "slow_query"
+        },
+        "agent": {
+          "root": "db",
+          "fault": "slow_query",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 7,
+          "claims": 12
+        }
+      },
+      {
+        "fault": "slow_query",
+        "root": "db",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "slow_query"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "slow_query"
+        },
+        "agent": {
+          "root": "db",
+          "fault": "slow_query",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 7,
+          "claims": 12
+        }
+      },
+      {
+        "fault": "timeout_cascade",
+        "root": "worker",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "timeout_cascade"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "timeout_cascade"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "timeout_cascade",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 12
+        }
+      },
+      {
+        "fault": "timeout_cascade",
+        "root": "worker",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "timeout_cascade"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "timeout_cascade"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "timeout_cascade",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 12
+        }
+      },
+      {
+        "fault": "timeout_cascade",
+        "root": "worker",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "timeout_cascade"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "timeout_cascade"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "timeout_cascade",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 12
+        }
+      },
+      {
+        "fault": "timeout_cascade",
+        "root": "worker",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "timeout_cascade"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "timeout_cascade"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "timeout_cascade",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 12
+        }
+      },
+      {
+        "fault": "timeout_cascade",
+        "root": "worker",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "timeout_cascade"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "timeout_cascade"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "timeout_cascade",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 12
+        }
+      },
+      {
+        "fault": "timeout_cascade",
+        "root": "orders",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "timeout_cascade"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "timeout_cascade"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "timeout_cascade",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 11
+        }
+      },
+      {
+        "fault": "timeout_cascade",
+        "root": "orders",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "timeout_cascade"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "timeout_cascade"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "timeout_cascade",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 11
+        }
+      },
+      {
+        "fault": "timeout_cascade",
+        "root": "orders",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "timeout_cascade"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "timeout_cascade"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "timeout_cascade",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 11
+        }
+      },
+      {
+        "fault": "timeout_cascade",
+        "root": "orders",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "timeout_cascade"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "timeout_cascade"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "timeout_cascade",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 11
+        }
+      },
+      {
+        "fault": "timeout_cascade",
+        "root": "orders",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "timeout_cascade"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "timeout_cascade"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "timeout_cascade",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 11
+        }
+      },
+      {
+        "fault": "memory_leak",
+        "root": "worker",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "memory_leak"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "memory_leak"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "memory_leak",
+          "confidence": 0.942,
+          "verified": true,
+          "evidence_items": 4,
+          "claims": 8
+        }
+      },
+      {
+        "fault": "memory_leak",
+        "root": "worker",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "memory_leak"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "memory_leak"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "memory_leak",
+          "confidence": 0.942,
+          "verified": true,
+          "evidence_items": 4,
+          "claims": 8
+        }
+      },
+      {
+        "fault": "memory_leak",
+        "root": "worker",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "memory_leak"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "memory_leak"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "memory_leak",
+          "confidence": 0.942,
+          "verified": true,
+          "evidence_items": 4,
+          "claims": 8
+        }
+      },
+      {
+        "fault": "memory_leak",
+        "root": "worker",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "memory_leak"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "memory_leak"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "memory_leak",
+          "confidence": 0.942,
+          "verified": true,
+          "evidence_items": 4,
+          "claims": 8
+        }
+      },
+      {
+        "fault": "memory_leak",
+        "root": "worker",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "memory_leak"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "memory_leak"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "memory_leak",
+          "confidence": 0.942,
+          "verified": true,
+          "evidence_items": 4,
+          "claims": 8
+        }
+      },
+      {
+        "fault": "memory_leak",
+        "root": "orders",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "memory_leak"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "memory_leak"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "memory_leak",
+          "confidence": 0.942,
+          "verified": true,
+          "evidence_items": 4,
+          "claims": 7
+        }
+      },
+      {
+        "fault": "memory_leak",
+        "root": "orders",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "memory_leak"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "memory_leak"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "memory_leak",
+          "confidence": 0.942,
+          "verified": true,
+          "evidence_items": 4,
+          "claims": 7
+        }
+      },
+      {
+        "fault": "memory_leak",
+        "root": "orders",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "memory_leak"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "memory_leak"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "memory_leak",
+          "confidence": 0.942,
+          "verified": true,
+          "evidence_items": 4,
+          "claims": 7
+        }
+      },
+      {
+        "fault": "memory_leak",
+        "root": "orders",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "memory_leak"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "memory_leak"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "memory_leak",
+          "confidence": 0.942,
+          "verified": true,
+          "evidence_items": 4,
+          "claims": 7
+        }
+      },
+      {
+        "fault": "memory_leak",
+        "root": "orders",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "memory_leak"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "memory_leak"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "memory_leak",
+          "confidence": 0.942,
+          "verified": true,
+          "evidence_items": 4,
+          "claims": 7
+        }
+      },
+      {
+        "fault": "memory_leak",
+        "root": "api",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "api",
+          "fault": "memory_leak"
+        },
+        "kb-only": {
+          "root": "api",
+          "fault": "memory_leak"
+        },
+        "agent": {
+          "root": "api",
+          "fault": "memory_leak",
+          "confidence": 0.942,
+          "verified": true,
+          "evidence_items": 4,
+          "claims": 6
+        }
+      },
+      {
+        "fault": "memory_leak",
+        "root": "api",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "api",
+          "fault": "memory_leak"
+        },
+        "kb-only": {
+          "root": "api",
+          "fault": "memory_leak"
+        },
+        "agent": {
+          "root": "api",
+          "fault": "memory_leak",
+          "confidence": 0.942,
+          "verified": true,
+          "evidence_items": 4,
+          "claims": 6
+        }
+      },
+      {
+        "fault": "memory_leak",
+        "root": "api",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "api",
+          "fault": "memory_leak"
+        },
+        "kb-only": {
+          "root": "api",
+          "fault": "memory_leak"
+        },
+        "agent": {
+          "root": "api",
+          "fault": "memory_leak",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 7,
+          "claims": 8
+        }
+      },
+      {
+        "fault": "memory_leak",
+        "root": "api",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "api",
+          "fault": "memory_leak"
+        },
+        "kb-only": {
+          "root": "api",
+          "fault": "memory_leak"
+        },
+        "agent": {
+          "root": "api",
+          "fault": "memory_leak",
+          "confidence": 0.942,
+          "verified": true,
+          "evidence_items": 4,
+          "claims": 6
+        }
+      },
+      {
+        "fault": "memory_leak",
+        "root": "api",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "api",
+          "fault": "memory_leak"
+        },
+        "kb-only": {
+          "root": "api",
+          "fault": "memory_leak"
+        },
+        "agent": {
+          "root": "api",
+          "fault": "memory_leak",
+          "confidence": 0.942,
+          "verified": true,
+          "evidence_items": 4,
+          "claims": 6
+        }
+      },
+      {
+        "fault": "config_change",
+        "root": "orders",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "config_change",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 10
+        }
+      },
+      {
+        "fault": "config_change",
+        "root": "orders",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "config_change",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 10
+        }
+      },
+      {
+        "fault": "config_change",
+        "root": "orders",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "config_change",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 10
+        }
+      },
+      {
+        "fault": "config_change",
+        "root": "orders",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "config_change",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 10
+        }
+      },
+      {
+        "fault": "config_change",
+        "root": "orders",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "config_change",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 10
+        }
+      },
+      {
+        "fault": "config_change",
+        "root": "api",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "api",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "api",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "api",
+          "fault": "config_change",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 7
+        }
+      },
+      {
+        "fault": "config_change",
+        "root": "api",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "api",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "api",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "api",
+          "fault": "config_change",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 7
+        }
+      },
+      {
+        "fault": "config_change",
+        "root": "api",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "api",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "api",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "api",
+          "fault": "config_change",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 7
+        }
+      },
+      {
+        "fault": "config_change",
+        "root": "api",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "api",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "api",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "api",
+          "fault": "config_change",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 7
+        }
+      },
+      {
+        "fault": "config_change",
+        "root": "api",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "api",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "api",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "api",
+          "fault": "config_change",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 7
+        }
+      },
+      {
+        "fault": "config_change",
+        "root": "db",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "db",
+          "fault": "config_change",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 7,
+          "claims": 12
+        }
+      },
+      {
+        "fault": "config_change",
+        "root": "db",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "db",
+          "fault": "config_change",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 7,
+          "claims": 12
+        }
+      },
+      {
+        "fault": "config_change",
+        "root": "db",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "db",
+          "fault": "config_change",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 7,
+          "claims": 12
+        }
+      },
+      {
+        "fault": "config_change",
+        "root": "db",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "db",
+          "fault": "config_change",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 7,
+          "claims": 12
+        }
+      },
+      {
+        "fault": "config_change",
+        "root": "db",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "db",
+          "fault": "config_change",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 7,
+          "claims": 12
+        }
+      },
+      {
+        "fault": "schema_drift",
+        "root": "worker",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "schema_drift"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "schema_drift"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "schema_drift",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 10,
+          "claims": 11
+        }
+      },
+      {
+        "fault": "schema_drift",
+        "root": "worker",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "schema_drift"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "schema_drift"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "schema_drift",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 10,
+          "claims": 11
+        }
+      },
+      {
+        "fault": "schema_drift",
+        "root": "worker",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "schema_drift"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "schema_drift"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "schema_drift",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 10,
+          "claims": 11
+        }
+      },
+      {
+        "fault": "schema_drift",
+        "root": "worker",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "schema_drift"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "schema_drift"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "schema_drift",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 10,
+          "claims": 11
+        }
+      },
+      {
+        "fault": "schema_drift",
+        "root": "worker",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "schema_drift"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "schema_drift"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "schema_drift",
+          "confidence": 1.0,
+          "verified": true,
+          "evidence_items": 10,
+          "claims": 11
+        }
+      }
+    ],
+    "held_out": [
+      {
+        "fault": "disk_full",
+        "root": "db",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "db",
+          "fault": null,
+          "confidence": 0.192,
+          "verified": true,
+          "evidence_items": 15,
+          "claims": 16
+        },
+        "kind": "never taught"
+      },
+      {
+        "fault": "disk_full",
+        "root": "db",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "db",
+          "fault": null,
+          "confidence": 0.192,
+          "verified": true,
+          "evidence_items": 15,
+          "claims": 17
+        },
+        "kind": "never taught"
+      },
+      {
+        "fault": "disk_full",
+        "root": "db",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "db",
+          "fault": null,
+          "confidence": 0.192,
+          "verified": true,
+          "evidence_items": 15,
+          "claims": 17
+        },
+        "kind": "never taught"
+      },
+      {
+        "fault": "disk_full",
+        "root": "db",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "db",
+          "fault": null,
+          "confidence": 0.192,
+          "verified": true,
+          "evidence_items": 15,
+          "claims": 17
+        },
+        "kind": "never taught"
+      },
+      {
+        "fault": "disk_full",
+        "root": "db",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "db",
+          "fault": null,
+          "confidence": 0.192,
+          "verified": true,
+          "evidence_items": 15,
+          "claims": 16
+        },
+        "kind": "never taught"
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "orders",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": null,
+          "confidence": 0.475,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 15
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "orders",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": null,
+          "confidence": 0.475,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 15
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "orders",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": null,
+          "confidence": 0.475,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 16
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "orders",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": null,
+          "confidence": 0.475,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 16
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "orders",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": null,
+          "confidence": 0.475,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 16
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "config_change",
+        "root": "orders",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": null,
+          "confidence": 0.442,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 15
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "config_change",
+        "root": "orders",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": null,
+          "confidence": 0.442,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 15
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "config_change",
+        "root": "orders",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": null,
+          "confidence": 0.442,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 16
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "config_change",
+        "root": "orders",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": null,
+          "confidence": 0.442,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 16
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "config_change",
+        "root": "orders",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": null,
+          "confidence": 0.442,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 15
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "memory_leak",
+        "root": "worker",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": null
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": null
+        },
+        "agent": {
+          "root": "worker",
+          "fault": null,
+          "confidence": 0.0,
+          "verified": true,
+          "evidence_items": 10,
+          "claims": 12
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "memory_leak",
+        "root": "worker",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": null
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": null
+        },
+        "agent": {
+          "root": "worker",
+          "fault": null,
+          "confidence": 0.0,
+          "verified": true,
+          "evidence_items": 10,
+          "claims": 11
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "memory_leak",
+        "root": "worker",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": null
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": null
+        },
+        "agent": {
+          "root": "worker",
+          "fault": null,
+          "confidence": 0.0,
+          "verified": true,
+          "evidence_items": 10,
+          "claims": 12
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "memory_leak",
+        "root": "worker",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": null
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": null
+        },
+        "agent": {
+          "root": "worker",
+          "fault": null,
+          "confidence": 0.0,
+          "verified": true,
+          "evidence_items": 10,
+          "claims": 11
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "memory_leak",
+        "root": "worker",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": null
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": null
+        },
+        "agent": {
+          "root": "worker",
+          "fault": null,
+          "confidence": 0.0,
+          "verified": true,
+          "evidence_items": 10,
+          "claims": 12
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "schema_drift",
+        "root": "worker",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": null,
+          "confidence": 0.375,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 15
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "schema_drift",
+        "root": "worker",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": null,
+          "confidence": 0.375,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 14
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "schema_drift",
+        "root": "worker",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": null,
+          "confidence": 0.375,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 14
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "schema_drift",
+        "root": "worker",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": null,
+          "confidence": 0.375,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 15
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "schema_drift",
+        "root": "worker",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": null,
+          "confidence": 0.375,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 15
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "slow_query",
+        "root": "db",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "db",
+          "fault": null,
+          "confidence": 0.116,
+          "verified": true,
+          "evidence_items": 12,
+          "claims": 17
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "slow_query",
+        "root": "db",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "db",
+          "fault": null,
+          "confidence": 0.116,
+          "verified": true,
+          "evidence_items": 12,
+          "claims": 16
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "slow_query",
+        "root": "db",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "db",
+          "fault": null,
+          "confidence": 0.116,
+          "verified": true,
+          "evidence_items": 12,
+          "claims": 16
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "slow_query",
+        "root": "db",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "db",
+          "fault": null,
+          "confidence": 0.116,
+          "verified": true,
+          "evidence_items": 12,
+          "claims": 16
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "slow_query",
+        "root": "db",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "config_change"
+        },
+        "agent": {
+          "root": "db",
+          "fault": null,
+          "confidence": 0.116,
+          "verified": true,
+          "evidence_items": 12,
+          "claims": 16
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "timeout_cascade",
+        "root": "worker",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": null,
+          "confidence": 0.483,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 17
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "timeout_cascade",
+        "root": "worker",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": null,
+          "confidence": 0.483,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 17
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "timeout_cascade",
+        "root": "worker",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": null,
+          "confidence": 0.483,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 17
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "timeout_cascade",
+        "root": "worker",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": null,
+          "confidence": 0.483,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 17
+        },
+        "kind": "left out of KB"
+      },
+      {
+        "fault": "timeout_cascade",
+        "root": "worker",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": null,
+          "confidence": 0.483,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 17
+        },
+        "kind": "left out of KB"
+      }
+    ],
+    "no_logs": [
+      {
+        "fault": "bad_deploy",
+        "root": "orders",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "bad_deploy",
+          "confidence": 0.692,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 6
+        }
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "orders",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "bad_deploy",
+          "confidence": 0.692,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 6
+        }
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "orders",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "bad_deploy",
+          "confidence": 0.692,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 7
+        }
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "orders",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "bad_deploy",
+          "confidence": 0.692,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 7
+        }
+      },
+      {
+        "fault": "bad_deploy",
+        "root": "orders",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": "bad_deploy",
+          "confidence": 0.692,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 7
+        }
+      },
+      {
+        "fault": "slow_query",
+        "root": "db",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "slow_query"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "slow_query"
+        },
+        "agent": {
+          "root": "db",
+          "fault": "slow_query",
+          "confidence": 0.608,
+          "verified": true,
+          "evidence_items": 7,
+          "claims": 8
+        }
+      },
+      {
+        "fault": "slow_query",
+        "root": "db",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "slow_query"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "slow_query"
+        },
+        "agent": {
+          "root": "db",
+          "fault": "slow_query",
+          "confidence": 0.608,
+          "verified": true,
+          "evidence_items": 7,
+          "claims": 8
+        }
+      },
+      {
+        "fault": "slow_query",
+        "root": "db",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "slow_query"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "slow_query"
+        },
+        "agent": {
+          "root": "db",
+          "fault": "slow_query",
+          "confidence": 0.608,
+          "verified": true,
+          "evidence_items": 7,
+          "claims": 8
+        }
+      },
+      {
+        "fault": "slow_query",
+        "root": "db",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "slow_query"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "slow_query"
+        },
+        "agent": {
+          "root": "db",
+          "fault": "slow_query",
+          "confidence": 0.608,
+          "verified": true,
+          "evidence_items": 7,
+          "claims": 8
+        }
+      },
+      {
+        "fault": "slow_query",
+        "root": "db",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "db",
+          "fault": "slow_query"
+        },
+        "kb-only": {
+          "root": "db",
+          "fault": "slow_query"
+        },
+        "agent": {
+          "root": "db",
+          "fault": "slow_query",
+          "confidence": 0.608,
+          "verified": true,
+          "evidence_items": 7,
+          "claims": 8
+        }
+      },
+      {
+        "fault": "timeout_cascade",
+        "root": "worker",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "timeout_cascade",
+          "confidence": 0.775,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 10
+        }
+      },
+      {
+        "fault": "timeout_cascade",
+        "root": "worker",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "timeout_cascade",
+          "confidence": 0.775,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 10
+        }
+      },
+      {
+        "fault": "timeout_cascade",
+        "root": "worker",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "timeout_cascade",
+          "confidence": 0.775,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 10
+        }
+      },
+      {
+        "fault": "timeout_cascade",
+        "root": "worker",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "timeout_cascade",
+          "confidence": 0.775,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 10
+        }
+      },
+      {
+        "fault": "timeout_cascade",
+        "root": "worker",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "timeout_cascade",
+          "confidence": 0.775,
+          "verified": true,
+          "evidence_items": 9,
+          "claims": 10
+        }
+      },
+      {
+        "fault": "memory_leak",
+        "root": "worker",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "memory_leak"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "memory_leak"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "memory_leak",
+          "confidence": 0.692,
+          "verified": true,
+          "evidence_items": 4,
+          "claims": 5
+        }
+      },
+      {
+        "fault": "memory_leak",
+        "root": "worker",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "memory_leak"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "memory_leak"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "memory_leak",
+          "confidence": 0.692,
+          "verified": true,
+          "evidence_items": 4,
+          "claims": 5
+        }
+      },
+      {
+        "fault": "memory_leak",
+        "root": "worker",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "memory_leak"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "memory_leak"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "memory_leak",
+          "confidence": 0.692,
+          "verified": true,
+          "evidence_items": 4,
+          "claims": 5
+        }
+      },
+      {
+        "fault": "memory_leak",
+        "root": "worker",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "memory_leak"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "memory_leak"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "memory_leak",
+          "confidence": 0.692,
+          "verified": true,
+          "evidence_items": 4,
+          "claims": 5
+        }
+      },
+      {
+        "fault": "memory_leak",
+        "root": "worker",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "memory_leak"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "memory_leak"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "memory_leak",
+          "confidence": 0.692,
+          "verified": true,
+          "evidence_items": 4,
+          "claims": 5
+        }
+      },
+      {
+        "fault": "config_change",
+        "root": "orders",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": null,
+          "confidence": 0.525,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 11
+        }
+      },
+      {
+        "fault": "config_change",
+        "root": "orders",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": null,
+          "confidence": 0.525,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 11
+        }
+      },
+      {
+        "fault": "config_change",
+        "root": "orders",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": null,
+          "confidence": 0.525,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 11
+        }
+      },
+      {
+        "fault": "config_change",
+        "root": "orders",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": null,
+          "confidence": 0.525,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 11
+        }
+      },
+      {
+        "fault": "config_change",
+        "root": "orders",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "kb-only": {
+          "root": "orders",
+          "fault": "capacity_exhaustion"
+        },
+        "agent": {
+          "root": "orders",
+          "fault": null,
+          "confidence": 0.525,
+          "verified": true,
+          "evidence_items": 17,
+          "claims": 11
+        }
+      },
+      {
+        "fault": "schema_drift",
+        "root": "worker",
+        "seed": 0,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "schema_drift",
+          "confidence": 0.608,
+          "verified": true,
+          "evidence_items": 10,
+          "claims": 6
+        }
+      },
+      {
+        "fault": "schema_drift",
+        "root": "worker",
+        "seed": 1,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "schema_drift",
+          "confidence": 0.608,
+          "verified": true,
+          "evidence_items": 10,
+          "claims": 6
+        }
+      },
+      {
+        "fault": "schema_drift",
+        "root": "worker",
+        "seed": 2,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "schema_drift",
+          "confidence": 0.608,
+          "verified": true,
+          "evidence_items": 10,
+          "claims": 6
+        }
+      },
+      {
+        "fault": "schema_drift",
+        "root": "worker",
+        "seed": 3,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "schema_drift",
+          "confidence": 0.608,
+          "verified": true,
+          "evidence_items": 10,
+          "claims": 6
+        }
+      },
+      {
+        "fault": "schema_drift",
+        "root": "worker",
+        "seed": 4,
+        "incidents": 1,
+        "naive": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "kb-only": {
+          "root": "worker",
+          "fault": "bad_deploy"
+        },
+        "agent": {
+          "root": "worker",
+          "fault": "schema_drift",
+          "confidence": 0.608,
+          "verified": true,
+          "evidence_items": 10,
+          "claims": 6
+        }
+      }
+    ]
+  },
+  "no_logs": {
+    "naive": {
+      "root_accuracy": 1.0,
+      "fault_accuracy": 0.333,
+      "abstained": 0.0,
+      "wrong_answer": 0.667
+    },
+    "kb-only": {
+      "root_accuracy": 1.0,
+      "fault_accuracy": 0.333,
+      "abstained": 0.0,
+      "wrong_answer": 0.667
+    },
+    "agent": {
+      "root_accuracy": 1.0,
+      "fault_accuracy": 0.833,
+      "abstained": 0.167,
+      "wrong_answer": 0.0
+    }
+  },
+  "agent_extra": {
+    "reports_verified": 1.0,
+    "avg_evidence_items": 10.0,
+    "avg_claims_checked": 10.8,
+    "avg_confidence_normal": 0.99,
+    "avg_confidence_held_out": 0.3
+  }
+}

@@ -5,7 +5,7 @@ import pytest
 from copilot.detect import find_incidents
 from copilot.kb import KB_DIR, KBUnavailable, KnowledgeBase, find_swipl, metric_symbol
 from copilot.kb.signature import hypotheses_for
-from copilot.sim.faults import FAULTS
+from copilot.sim.faults import KNOWN_FAULTS
 from copilot.tools.toolbox import Toolbox
 
 try:
@@ -75,7 +75,7 @@ def test_learn_writes_new_precedent_back(tmp_path):
     assert kb.hypotheses("db", [metric_symbol("mem_mb")], ["OutOfMemoryError: heap"]) == []
 
 
-@pytest.mark.parametrize("fault", sorted(FAULTS))
+@pytest.mark.parametrize("fault", KNOWN_FAULTS)
 def test_end_to_end_signature_ranks_true_fault_first(make_scenario, kb, fault):
     info = make_scenario(fault)
     inc = find_incidents(info["db"])[0]

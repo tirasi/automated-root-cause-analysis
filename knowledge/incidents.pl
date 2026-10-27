@@ -3,6 +3,8 @@
 :- multifile past_incident/5, incident_symptom/2.
 :- dynamic past_incident/5, incident_symptom/2.
 
+% past_incident(id, fault, services, error, fix)- this is the relation
+
 past_incident('pm-001', bad_deploy, api,
   "Release v1.9 removed a null guard; checkout requests started failing within minutes of the deploy.",
   "Rolled back to v1.8; added a regression test.").

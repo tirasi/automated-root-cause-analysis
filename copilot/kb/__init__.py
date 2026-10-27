@@ -50,6 +50,7 @@ class KnowledgeBase:
         self.swipl = swipl or find_swipl()
         self.dir = Path(kb_dir or KB_DIR)
         self.exclude = list(exclude)
+        self._cache = {}  # runbook/predictions are static facts: look each up once per instance
 
     def _query(self, goal):
         files = [self.dir / f for f in FILES if (self.dir / f).exists()]
@@ -91,6 +92,12 @@ class KnowledgeBase:
         return None
 
     def runbook(self, fault):
+        key = ("runbook", fault)
+        if key not in self._cache:
+            self._cache[key] = self._runbook(fault)
+        return self._cache[key]
+
+    def _runbook(self, fault):
         rows = self._query(f"runbook({pl_atom(fault)})")
         head = next((r for r in rows if r[0] == "RB"), None)
         if not head:
@@ -99,23 +106,34 @@ class KnowledgeBase:
                 "steps": [r[2] for r in rows if r[0] == "STEP"]}
 
     def predictions(self, fault):
-        return [{"tool": r[1], "expect": r[2]} for r in self._query(f"predictions({pl_atom(fault)})") if r[0] == "PRED"]
+        key = ("pred", fault)
+        if key not in self._cache:
+            self._cache[key] = [{"tool": r[1], "expect": r[2]}
+                                for r in self._query(f"predictions({pl_atom(fault)})") if r[0] == "PRED"]
+        return self._cache[key]
 
     def search_runbooks(self, text, top_k=3):
         rows = [r for r in self._query(f"search({pl_str(text)})") if r[0] == "RB"]
         return [{"kb_id": f"kb:{r[1]}", "fault": r[2], "score": int(r[3]), "title": r[4]} for r in rows[:top_k]]
 
-    def learn(self, kb_id, fault, root_service, summary, resolution, symptoms):
+    def learn(self, kb_id, fault, root_service, summary, resolution, symptoms, runbook_steps=None, title=None, log_tags=None):
         """Write a finished incident back as new precedent facts (postmortem node). `symptoms` use
         the same service-agnostic form as incidents.pl, e.g. ["metric(error_rate,up)", "log(oom)"]."""
         pid = kb_id.removeprefix("kb:")
         path = self.dir / "learned.pl"
         header = "" if path.exists() else (
-            ":- multifile past_incident/5, incident_symptom/2.\n"
+            ":- multifile past_incident/5, incident_symptom/2, runbook/3, runbook_step/3, log_tag/2.\n"
             ":- dynamic past_incident/5, incident_symptom/2.\n")
         lines = [f"past_incident({_quoted(pid)}, {pl_atom(fault)}, {pl_atom(root_service)}, "
                  f"{pl_str(summary)}, {pl_str(resolution)})."]
         lines += [f"incident_symptom({_quoted(pid)}, {s})." for s in symptoms]
+        for tag, pattern in (log_tags or {}).items():   # new log wording -> symptom tag (lower-case match)
+            lines.append(f"log_tag({pl_atom(tag)}, {pl_str(pattern.lower())}).")
+        if runbook_steps and not self.runbook(fault):  # a fault the KB has no runbook for yet
+            rid = "rb-learned-" + fault.replace("_", "-")
+            lines.append(f"runbook({pl_atom(fault)}, {_quoted(rid)}, {pl_str(title or fault)}).")
+            lines += [f"runbook_step({_quoted(rid)}, {n}, {pl_str(t)})." for n, t in enumerate(runbook_steps, 1)]
         with open(path, "a") as fh:
             fh.write(header + "\n".join(lines) + "\n")
+        self._cache.clear()
         return f"kb:{pid}"

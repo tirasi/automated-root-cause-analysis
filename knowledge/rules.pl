@@ -30,9 +30,12 @@ fault_applies(capacity_exhaustion, gateway).
 fault_applies(capacity_exhaustion, app).
 
 applicable(_, any) :- !.
+% a fault with no declared service kinds (e.g. one learned from a human label) can start anywhere
+applicable(Fault, _) :- \+ fault_applies(Fault, _), !.
 applicable(Fault, Service) :- service_kind(Service, Kind), fault_applies(Fault, Kind), !.
 
 % ---------- log message -> symptom tag ----------
+:- multifile log_tag/2.
 log_tag(null_pointer, "nullpointerexception").
 log_tag(null_pointer, "nonetype has no attribute").
 log_tag(slow_query, "slow query").

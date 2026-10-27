@@ -1,5 +1,6 @@
 % Runbooks, testable predictions and search keywords per fault. Runbook ids are cited as kb:<id>.
 % Predictions tell the investigation which tool can confirm or refute a hypothesis.
+:- multifile runbook/3, runbook_step/3.
 :- discontiguous runbook/3, runbook_step/3.
 
 runbook(bad_deploy, 'rb-bad-deploy', "Bad deploy").

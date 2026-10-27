@@ -18,7 +18,7 @@ NEW_TEMPLATE_MIN = 5
 def _robust_z(history, value):
     med = statistics.median(history)
     mad = statistics.median([abs(v - med) for v in history])
-    return (value - med) / max(1.4826 * mad, 1e-6)
+    return (value - med) / max(1.4826 * mad, 1e-6) #0 is normal, 9+ too high
 
 
 def metric_alerts(conn, start_ts=None, end_ts=None):

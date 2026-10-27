@@ -73,6 +73,18 @@ FAULTS = {
         "deploy": None,
         "config": None,
     },
+    # Deliberately NOT in the knowledge base: used to test how the system behaves on an unknown fault.
+    "disk_full": {
+        "description": "The database volume filled up, so writes started failing.",
+        "default_root": "db",
+        "effects": {"error_rate": ("step", 15.0), "latency_ms": ("step", 120.0)},
+        "error_logs": [
+            ("ERROR", "No space left on device: write failed file=wal_{n}.log"),
+            ("ERROR", "checkpoint failed: disk quota exceeded volume=/data{n}"),
+        ],
+        "deploy": None,
+        "config": None,
+    },
 }
 
 BACKGROUND_LOGS = [
@@ -81,3 +93,7 @@ BACKGROUND_LOGS = [
     ("INFO", "cache hit key=session:{n}"),
     ("DEBUG", "connection reused conn_id={n}"),
 ]
+
+# Faults the knowledge base has never been taught (used to test unknown-fault behaviour).
+HELD_OUT = {"disk_full"}
+KNOWN_FAULTS = sorted(set(FAULTS) - HELD_OUT)

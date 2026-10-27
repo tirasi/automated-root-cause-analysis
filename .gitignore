@@ -7,3 +7,4 @@ data/*.db
 .fuse_hidden*
 knowledge/learned.pl
 .DS_Store
+data/api/
